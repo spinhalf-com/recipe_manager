@@ -54,9 +54,14 @@ class Handler extends ExceptionHandler
             $code                   = 500;
         }
 
+        $message                    = stripslashes($e->getMessage());
 
+        if(gettype($message)== 'string')
+        {
+            $message                = json_decode($message, true);
+        }
 
-        return response()->json([$e->getMessage()],$code );
+        return response()->json( $message, $code );
 
         //return parent::render($request, $e);
     }

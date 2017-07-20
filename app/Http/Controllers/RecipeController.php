@@ -39,21 +39,23 @@ class RecipeController extends Controller
     }
 
     /**
-     *
+     * List recipes by cuisine - paginated
      *
      * @param string $cuisine
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function listRecipesByCuisine($cuisine, $page = 1)
+    public function listRecipesByCuisine($cuisine, $page = 3)
     {
-        $result                         = $this->recipeManager->listRecipesByCuisine($cuisine);
+        $result                         = $this->recipeManager->listRecipesByCuisine($cuisine, $page);
 
-        return response()->json($result, $result['status']);
+        return response()->json($result, 200);
     }
 
     /**
-     *
+     * Get recipe by ID
      *
      * @param int $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getRecipe($id)
     {
@@ -63,8 +65,9 @@ class RecipeController extends Controller
     }
 
     /**
+     * Save new recipe
      *
-     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function saveRecipe()
     {
@@ -73,34 +76,49 @@ class RecipeController extends Controller
         return response()->json($result, 200);
     }
 
-//    /**
-//     *
-//     *
-//     * @param int $id
-//     */
-//    public function updateRecipe($id)
-//    {
-//        return response()->json($result, 200);
-//    }
-//
-//    /**
-//     *
-//     *
-//     * @param int $id
-//     */
-//    public function deleteRecipe($id)
-//    {
-//        return response()->json($result, 200);
-//    }
+    /**
+     * Update recipe by ID
+     *
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateRecipe($id)
+    {
+        $result                         = $this->recipeManager->updateRecipe($id, $this->request->all());
 
+        return response()->json($result, 200);
+    }
 
+    /**
+     * Delete recipe by ID
+     *
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deleteRecipe($id)
+    {
+        $result                         = $this->recipeManager->deleteRecipeById($id);
+
+        return response()->json(['status' => $result, 'data' => "Recipe $id deleted"], 200);
+    }
+
+    /**
+     * List all recipes
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function recipes()
     {
-        $results = Recipes::all();
+        $results                        = Recipes::all();
 
         return response()->json($results);
     }
 
+    /**
+     * Submit user rating for a given recipe
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function rateRecipe()
     {
         $data                           = $this->request->all();

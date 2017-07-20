@@ -21,9 +21,14 @@ $app->get('/hello', function () use ($app) {
 
 //['middleware' => 'auth']
 
-$app->group(['prefix' => 'api/v1'], function () use ($app)
+$app->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use ($app)
 {
-    $app->get('/recipe_list/{cuisine}/{page?}', 'RecipeController@listRecipesByCuisine');
+    $app->get('/users', function() use ($app)
+    {
+        return response()->json(\App\User::all());
+    });
+
+    $app->get('/recipe_list/{cuisine}/{page}', 'RecipeController@listRecipesByCuisine');
     $app->get('/recipe', 'RecipeController@recipes');
     $app->get('/recipe/{id}', 'RecipeController@getRecipe');
     $app->post('/recipe', 'RecipeController@saveRecipe');
@@ -32,4 +37,3 @@ $app->group(['prefix' => 'api/v1'], function () use ($app)
 
     $app->post('/rating', 'RecipeController@rateRecipe');
 });
-

@@ -1,0 +1,402 @@
+{
+	"id": "8a344efb-eea2-e15a-0dda-5dbe973a89c1",
+	"name": "Recipe Manager",
+	"description": "",
+	"order": [
+		"79cea4db-dcd1-f0bb-b90e-5a7547fe025e",
+		"2da0c635-bf1f-71c2-4f6d-6adc0dad1407",
+		"f4f65bb8-815f-b79f-a5c2-0b6ca52ba46e",
+		"2bf30872-2592-303a-15a2-1ac7beb2c64c",
+		"2957e4a4-72f3-6657-515e-1b55ed72c926",
+		"96c0aaf3-7795-2835-65d4-af713671defd"
+	],
+	"folders": [],
+	"timestamp": 1500543748165,
+	"owner": "1060856",
+	"public": false,
+	"requests": [
+		{
+			"id": "2957e4a4-72f3-6657-515e-1b55ed72c926",
+			"headers": "Content-Type: application/json\nApiToken: 689vh7821945gj9jx2893u48347uhfi323h2c94839ygshkw837u64wcj4390bjvc029\n",
+			"url": "{{url}}/api/v1/recipe",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "box_type",
+					"value": "vegetarian",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "title",
+					"value": "Pesto penne pasta with olive oil and cheese",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "short_title",
+					"value": "Penne Pesto",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "marketing_description",
+					"value": "1\tIn a pan, roast together pomegranate and cumin seeds and grind to a powder.\n2\tPut water, chickpeas, 4 tsp salt, cardamoms, cinnamon and cloves in cooker. Stir.\n3\tClose cooker. Bring to full pressure on high heat. Reduce heat and cook for 18 minutes.\n4\tRemove cooker from heat. Allow to cool naturally.\n5\tOpen cooker. Drain off cooking liquid and reserve. Add remaining salt ( 3 ½ tsp), pomegranate-cumin, coriander, pepper, garam masala and mango powders. Mix till chickpeas are coated with spices. Sprinkle chillies and ginger on top.\n6\tIn a pan, heat oil and ghee till smoky ( approximately 5 minutes) and pour evenly over chickpeas. Add cooking liquid.\n7\tPlace cooker on medium heat. Cook till liquid dries up and oil shows seperately (approximately 10 minutes), stirring occasionally.\n8\tPlace chickpeas on serving dish. Serve hot, granished with onion and lemon wedges.",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "calories_kcal",
+					"value": "500",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "protein_grams",
+					"value": "15",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fat_grams",
+					"value": "10",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "carbs_grams",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bulletpoint1",
+					"value": "pasta",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bulletpoint2",
+					"value": "penne",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bulletpoint3",
+					"value": "pesto",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "recipe_diet_type_id",
+					"value": "vegetarian",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "season",
+					"value": "all",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "base",
+					"value": "pasta",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "protein_source",
+					"value": "bean",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "preparation_time_minutes",
+					"value": "30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "shelf_life_days",
+					"value": "5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "equipment_needed",
+					"value": "Appetite",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "origin_country",
+					"value": "Britain",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "recipe_cuisine",
+					"value": "british",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gousto_reference",
+					"value": "100",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500567879667,
+			"name": "Save recipe",
+			"description": "",
+			"collectionId": "8a344efb-eea2-e15a-0dda-5dbe973a89c1",
+			"responses": []
+		},
+		{
+			"id": "2bf30872-2592-303a-15a2-1ac7beb2c64c",
+			"headers": "Content-Type: application/json\nApiToken: 689vh7821945gj9jx2893u48347uhfi323h2c94839ygshkw837u64wcj4390bjvc029\n",
+			"url": "{{url}}/api/v1/rating",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "rating",
+					"value": "5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "users_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "recipes_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500567873733,
+			"name": "Rate recipe",
+			"description": "",
+			"collectionId": "8a344efb-eea2-e15a-0dda-5dbe973a89c1",
+			"responses": []
+		},
+		{
+			"id": "2da0c635-bf1f-71c2-4f6d-6adc0dad1407",
+			"headers": "Content-Type: application/json\nApiToken: 689vh7821945gj9jx2893u48347uhfi323h2c94839ygshkw837u64wcj4390bjvc029\n",
+			"url": "{{url}}/api/v1/recipe_list/british/2",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500553594764,
+			"name": "Get recipes by cuisine",
+			"description": "",
+			"collectionId": "8a344efb-eea2-e15a-0dda-5dbe973a89c1",
+			"responses": []
+		},
+		{
+			"id": "79cea4db-dcd1-f0bb-b90e-5a7547fe025e",
+			"headers": "Content-Type: application/json\nApiToken: 689vh7821945gj9jx2893u48347uhfi323h2c94839ygshkw837u64wcj4390bjvc029\n",
+			"url": "{{url}}/api/v1/recipe/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500552057529,
+			"name": "Get recipe by ID",
+			"description": "",
+			"collectionId": "8a344efb-eea2-e15a-0dda-5dbe973a89c1",
+			"responses": []
+		},
+		{
+			"id": "96c0aaf3-7795-2835-65d4-af713671defd",
+			"headers": "Content-Type: application/json\nApiToken: 689vh7821945gj9jx2893u48347uhfi323h2c94839ygshkw837u64wcj4390bjvc029\n",
+			"url": "{{url}}/api/v1/recipe/13",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "box_type",
+					"value": "vegetarian",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "title",
+					"value": "Pesto penne pasta with olive oil and a cheescake",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "short_title",
+					"value": "Penne Pesto",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "marketing_description",
+					"value": "1\tIn a pan, roast together pomegranate and cumin seeds and grind to a powder.\n2\tPut water, chickpeas, 4 tsp salt, cardamoms, cinnamon and cloves in cooker. Stir.\n3\tClose cooker. Bring to full pressure on high heat. Reduce heat and cook for 18 minutes.\n4\tRemove cooker from heat. Allow to cool naturally.\n5\tOpen cooker. Drain off cooking liquid and reserve. Add remaining salt ( 3 ½ tsp), pomegranate-cumin, coriander, pepper, garam masala and mango powders. Mix till chickpeas are coated with spices. Sprinkle chillies and ginger on top.\n6\tIn a pan, heat oil and ghee till smoky ( approximately 5 minutes) and pour evenly over chickpeas. Add cooking liquid.\n7\tPlace cooker on medium heat. Cook till liquid dries up and oil shows seperately (approximately 10 minutes), stirring occasionally.\n8\tPlace chickpeas on serving dish. Serve hot, granished with onion and lemon wedges.",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "calories_kcal",
+					"value": "500",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "protein_grams",
+					"value": "15",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fat_grams",
+					"value": "10",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "carbs_grams",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bulletpoint1",
+					"value": "pasta",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bulletpoint2",
+					"value": "penne",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bulletpoint3",
+					"value": "pesto",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "recipe_diet_type_id",
+					"value": "vegetarian",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "season",
+					"value": "all",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "base",
+					"value": "pasta",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "protein_source",
+					"value": "bean",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "preparation_time_minutes",
+					"value": "30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "shelf_life_days",
+					"value": "5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "equipment_needed",
+					"value": "Appetite",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "origin_country",
+					"value": "Britain",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "recipe_cuisine",
+					"value": "british",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gousto_reference",
+					"value": "100",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500567882966,
+			"name": "Update recipe",
+			"description": "",
+			"collectionId": "8a344efb-eea2-e15a-0dda-5dbe973a89c1",
+			"responses": []
+		},
+		{
+			"id": "f4f65bb8-815f-b79f-a5c2-0b6ca52ba46e",
+			"headers": "Content-Type: application/json\nApiToken: 689vh7821945gj9jx2893u48347uhfi323h2c94839ygshkw837u64wcj4390bjvc029\n",
+			"url": "{{url}}/api/v1/recipe/12",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500567581133,
+			"name": "Delete recipe by ID",
+			"description": "",
+			"collectionId": "8a344efb-eea2-e15a-0dda-5dbe973a89c1",
+			"responses": []
+		}
+	]
+}

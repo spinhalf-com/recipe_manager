@@ -58,7 +58,7 @@ class RecipeManager implements RecipeManagerInterface
 
     public function saveRecipe($data)
     {
-        if(in_array('title', $data))
+        if(array_key_exists('title', $data))
         {
             $data['slug']           = strtolower(str_replace(' ', '-', $data['title']));
         }
@@ -78,7 +78,7 @@ class RecipeManager implements RecipeManagerInterface
             'bulletpoint3'	            => 'sometimes|max:100',
             'recipe_diet_type_id'       => 'required|in:meat,fish,vegetarian',
             'season'                    => 'required',
-            'base'	                    => 'somtimes|max:50',
+            'base'	                    => 'sometimes|max:50',
             'protein_source'	        => 'required',
             'preparation_time_minutes'  => 'required|numeric',
             'shelf_life_days'	        => 'required|numeric',
@@ -92,7 +92,7 @@ class RecipeManager implements RecipeManagerInterface
 
         if($validator->fails())
         {
-            abort(400, $validator->errors());
+            abort(400, $validator->messages());
         }
 
         $result                         = Recipes::create($data);
@@ -102,7 +102,9 @@ class RecipeManager implements RecipeManagerInterface
 
     public function updateRecipe($id, $data)
     {
-        if(in_array('title', $data))
+        $data['id']                     = $id;
+
+        if(array_key_exists('title', $data))
         {
             $data['slug']           = strtolower(str_replace(' ', '-', $data['title']));
         }
@@ -111,7 +113,7 @@ class RecipeManager implements RecipeManagerInterface
             'id'                        => 'required|exists:recipes,id',
             'box_type'                  => 'required|in:vegetarian,gourmet',
             'title'	                    => 'required',
-            'slug'                      => 'required|unique:recipes,slug',
+            //'slug'                      => 'required|unique:recipes,slug',
             'short_title'               => 'sometimes|max:50',
             'marketing_description'     => 'required|min:100,max:1000',
             'calories_kcal'             => 'required|numeric',
@@ -123,7 +125,7 @@ class RecipeManager implements RecipeManagerInterface
             'bulletpoint3'	            => 'sometimes|max:100',
             'recipe_diet_type_id'       => 'required|in:meat,fish,vegetarian',
             'season'                    => 'required',
-            'base'	                    => 'somtimes|max:50',
+            'base'	                    => 'sometimes|max:50',
             'protein_source'	        => 'required',
             'preparation_time_minutes'  => 'required|numeric',
             'shelf_life_days'	        => 'required|numeric',
@@ -162,11 +164,11 @@ class RecipeManager implements RecipeManagerInterface
 
         if($validator->fails())
         {
-            $result                 = ['status' => 400, 'data' => $validator->errors()];
+            abort(400, $validator->errors());
         }
         else
         {
-            $result                 = ['status' => 200, 'data' => Recipes::where('recipe_cuisine', $cuisine)->get($page)];
+            $result                 = Recipes::where('recipe_cuisine', $cuisine)->paginate($page);
         }
 
         return $result;
@@ -175,7 +177,7 @@ class RecipeManager implements RecipeManagerInterface
     public function submitRating($data)
     {
         $rules                      = [
-            'user_id'               => 'required|exists:users,id',
+            'users_id'              => 'required|exists:users,id',
             'recipes_id'            => 'required|exists:recipes,id',
             'rating'                => 'required|between:1,5'
         ];
@@ -188,11 +190,11 @@ class RecipeManager implements RecipeManagerInterface
         }
         else
         {
-            $ratingRecord           = Ratings::where('user_id', $data['user_id'])->where('recipes_id', $data['recipes_id'])->first();
+            $ratingRecord           = Ratings::where('users_id', $data['users_id'])->where('recipes_id', $data['recipes_id'])->first();
 
             if(count($ratingRecord))
             {
-                $ratingRecord->user_id      = $data['user_id'];
+                $ratingRecord->users_id     = $data['users_id'];
                 $ratingRecord->recipes_id   = $data['recipes_id'];
                 $ratingRecord->rating       = $data['rating'];
 
@@ -207,3 +209,5 @@ class RecipeManager implements RecipeManagerInterface
         return $ratingRecord;
     }
 }
+
+
