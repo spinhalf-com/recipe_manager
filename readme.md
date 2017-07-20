@@ -4,7 +4,7 @@ This application is a demo RESTful API allowing CRUD operations to be performed 
  
 ##Installation Requirements
     
-You will need a web server environment running PHP 7.0, Apache or Nginx, including the sqlite extensions for PHP. There is no need to setup a database connection as the data is included in the file ./daabase/database.sqlite.  
+You will need a web server environment running PHP 7.0, Apache or Nginx, including the sqlite extensions for PHP. There is no need to setup a database connection as the data is included in the file ./database/database.sqlite.  
  
 ##Setup Guide
  
@@ -117,4 +117,9 @@ This is how the user identity is resolved for the rating endpoint.
 
 For the sake of convenience, if you use Postman, all endpoints are testable by importing the file Recipe Manager.postman_collection.json in the root of the project: this includes a working ApiToken value in the header of each request.
  
-There is also a small number of unit tests - each endpoint is also testable by running: phpunit --debug 
+There is also a small number of unit tests - each endpoint is also testable by running: phpunit --debug
+ 
+The database folder also contains full migrations and seed files. This means that a mysql database can be built and populated easily using this command:
+php artisan migrate:refresh --seed  (This would require making the relevant changes to the database settings in .env)
+   
+   
