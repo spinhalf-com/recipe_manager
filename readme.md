@@ -2,11 +2,11 @@
 
 This application is a demo RESTful API allowing CRUD operations to be performed upon a table holding recipe information, and to save user ratings against a recipe record, making JSON responses to all requests. It is written for the Lumen framework (version 5.4x). [Lumen website](http://lumen.laravel.com/docs) Lumen was chosen as it is the preferred framework for Gousto's microservices architecture. 
  
-    Installation Requirements
+##Installation Requirements
     
 You will need a web server environment running PHP 7.0, Apache or Nginx, including the sqlite extensions for PHP. There is no need to setup a database connection as the data is included in the file ./daabase/database.sqlite.  
  
-    Setup Guide
+##Setup Guide
  
  1  Clone this repository to an appropriate location on your webserver environment. 
  
@@ -18,26 +18,33 @@ You will need a web server environment running PHP 7.0, Apache or Nginx, includi
  
  You should now be able to interact with the API via the following endpoints:
   
-Get Recipe List By ID
+##Usage  
+  
+###Get Recipe List By ID
  
   Method: GET
-  Path: /api/v1/recipe/{id}
-    
-Get Recipe List By Cuisine Type
+  
+  Path: /api/v1/recipe/{id} 
+###Get Recipe List By Cuisine Type
  
   Method: GET
+  
   Path: /api/v1/recipe_list/{cuisine_type}/{results_per_page}
     
-Delete Recipe List By ID
+###Delete Recipe List By ID
  
   Method: DELETE
+  
   Path: /api/v1/recipe/{id}        
  
-Save Recipe 
+###Save Recipe 
 
   Method: POST
+  
   Path: /api/v1/recipe
-  Body: 
+  
+  Body:
+   
     box_type: {string}
     title:{string}
     short_title:{string}
@@ -60,11 +67,14 @@ Save Recipe
     recipe_cuisine:{string}
     gousto_reference:{integer}
  
-Update Recipe 
+###Update Recipe 
 
   Method: PUT
+  
   Path: /api/v1/recipe/{id}
-  Body: 
+  
+  Body:
+   
     box_type: {string}
     title:{string}
     short_title:{string}
@@ -87,20 +97,24 @@ Update Recipe
     recipe_cuisine:{string}
     gousto_reference:{integer}    
     
-Save Rating
+###Save Rating
     
   Method: POST
+  
   Path: /api/v1/rating
-  Body: 
+  
+  Body:
+   
       rating:{integer} 
       users_id:{integer} 
       recipes_id:{integer} 
       
-    Notes            
+    
+##Notes            
 
 Requests are secured by the requirement for a header token: ApiToken : {token} 
 This is how the user identity is resolved for the rating endpoint.  
 
 For the sake of convenience, if you use Postman, all endpoints are testable by importing the file Recipe Manager.postman_collection.json in the root of the project: this includes a working ApiToken value in the header of each request.
  
-Each endpoint is also testable by running: phpunit --debug 
+There is also a small number of unit tests - each endpoint is also testable by running: phpunit --debug 
