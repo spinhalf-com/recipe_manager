@@ -95,3 +95,12 @@ Save Rating
       rating:{integer} 
       users_id:{integer} 
       recipes_id:{integer} 
+      
+    Notes            
+
+Requests are secured by the requirement for a header token: ApiToken : {token} 
+This is how the user identity is resolved for the rating endpoint.  
+
+For the sake of convenience, if you use Postman, all endpoints are testable by importing the file Recipe Manager.postman_collection.json in the root of the project: this includes a working ApiToken value in the header of each request.
+ 
+Each endpoint is also testable by running: phpunit --debug 
