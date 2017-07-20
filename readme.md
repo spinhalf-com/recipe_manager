@@ -18,26 +18,26 @@ You will need a web server environment running PHP 7.0, Apache or Nginx, includi
  
  You should now be able to interact with the API via the following endpoints:
   
-##Usage  
+## Usage  
   
-###Get Recipe List By ID
+### Get Recipe List By ID
  
   Method: GET
   
   Path: /api/v1/recipe/{id} 
-###Get Recipe List By Cuisine Type
+### Get Recipe List By Cuisine Type
  
   Method: GET
   
   Path: /api/v1/recipe_list/{cuisine_type}/{results_per_page}
     
-###Delete Recipe List By ID
+### Delete Recipe List By ID
  
   Method: DELETE
   
   Path: /api/v1/recipe/{id}        
  
-###Save Recipe 
+### Save Recipe 
 
   Method: POST
   
@@ -67,7 +67,7 @@ You will need a web server environment running PHP 7.0, Apache or Nginx, includi
     recipe_cuisine:{string}
     gousto_reference:{integer}
  
-###Update Recipe 
+### Update Recipe 
 
   Method: PUT
   
@@ -97,7 +97,7 @@ You will need a web server environment running PHP 7.0, Apache or Nginx, includi
     recipe_cuisine:{string}
     gousto_reference:{integer}    
     
-###Save Rating
+### Save Rating
     
   Method: POST
   
@@ -110,7 +110,7 @@ You will need a web server environment running PHP 7.0, Apache or Nginx, includi
       recipes_id:{integer} 
       
     
-##Notes            
+## Notes            
 
 Requests are secured by the requirement for a header token: ApiToken : {token} 
 This is how the user identity is resolved for the rating endpoint.  
