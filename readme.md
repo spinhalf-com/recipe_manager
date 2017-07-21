@@ -1,12 +1,12 @@
 # Sample Gousto Recipe Manager 
 
-This application is a demo RESTful API allowing CRUD operations to be performed upon a table holding recipe information, and to save user ratings against a recipe record, making JSON responses to all requests. It is written for the Lumen framework (version 5.4x). Lumen was chosen as it is the preferred framework for Gousto's microservices architecture.  [Lumen website](http://lumen.laravel.com/docs) 
+This application is a demo RESTful API allowing CRUD operations to be performed upon a table holding recipe information, and to save user ratings against a recipe record, making JSON responses to all requests. It is written for the Lumen framework (version 5.4x). Lumen was chosen as it is the preferred framework for Gousto's microservices architecture.  [Lumen website here](http://lumen.laravel.com/docs) 
  
-##Installation Requirements
+## Installation Requirements
     
 You will need a web server environment running PHP 7.0, Apache or Nginx, including the sqlite extensions for PHP. There is no need to setup a database connection as the data is included in the file ./database/database.sqlite.  
  
-##Setup Guide
+## Setup Guide
  
  1  Clone this repository to an appropriate location on your webserver environment. 
  
