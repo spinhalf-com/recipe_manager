@@ -48,7 +48,7 @@ You will need a web server environment running PHP 7.0, Apache or Nginx, includi
     box_type: {string}
     title:{string}
     short_title:{string}
-    marketing_description:{medium text}
+    marketing_description:{medium text} (min 100 characters)
     calories_kcal:{integer}
     protein_grams:{integer}
     fat_grams:{integer}
@@ -78,7 +78,7 @@ You will need a web server environment running PHP 7.0, Apache or Nginx, includi
     box_type: {string}
     title:{string}
     short_title:{string}
-    marketing_description:{medium text}
+    marketing_description:{medium text} (min 100 characters)
     calories_kcal:{integer}
     protein_grams:{integer}
     fat_grams:{integer}
