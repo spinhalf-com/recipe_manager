@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Validator;
 
 class RecipeManager implements RecipeManagerInterface
 {
+    /**
+     * GET SINGLE RECIPE RECORD BY ID
+     *
+     * @param $id
+     * @return Eloquent $result | array $errors
+     */
     public function getRecipeById($id)
     {
         $rules                      = ['id' => 'required|exists:recipes,id'];
@@ -34,6 +40,12 @@ class RecipeManager implements RecipeManagerInterface
         return $result;
     }
 
+    /**
+     * DELETE RECIPE RECORD BY ID
+     *
+     * @param $id
+     * @return Eloquent $result | array $errors
+     */
     public function deleteRecipeById($id)
     {
         $rules                      = ['id' => 'required|exists:recipes,id'];
@@ -56,6 +68,12 @@ class RecipeManager implements RecipeManagerInterface
         return $result;
     }
 
+    /**
+     * SAVE NEW RECIPE RECORD
+     *
+     * @param array $data
+     * @return Eloquent $result | array $errors
+     */
     public function saveRecipe($data)
     {
         if(array_key_exists('title', $data))
@@ -100,6 +118,13 @@ class RecipeManager implements RecipeManagerInterface
         return $result;
     }
 
+    /**
+     * UPDATE RECIPE RECORD
+     *
+     * @param int $id
+     * @param array $data
+     * @return Eloquent $result | array $errors
+     */
     public function updateRecipe($id, $data)
     {
         $data['id']                     = $id;
@@ -154,6 +179,13 @@ class RecipeManager implements RecipeManagerInterface
         return $recipe;
     }
 
+    /**
+     * LIST COLLECTION OF RECIPES BY CUISINE TYPE
+     *
+     * @param string $cuisine
+     * @param int $page
+     * @return Eloquent $result | array $errors
+     */
     public function listRecipesByCuisine($cuisine, $page)
     {
         $rules                      = ['recipe_cuisine' => 'required|exists:recipes,recipe_cuisine'];
@@ -174,6 +206,12 @@ class RecipeManager implements RecipeManagerInterface
         return $result;
     }
 
+    /**
+     * ALLOW A USER TO RATE A SPECIFIC RECIPE
+     *
+     * @param array $data
+     * @return Eloquent $result | array $errors
+     */
     public function submitRating($data)
     {
         $rules                      = [
