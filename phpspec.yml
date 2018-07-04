@@ -3,3 +3,5 @@ suites:
         namespace: App\Recipes
         psr4_prefix: App\Recipes
 formatter.name: pretty
+extensions:
+    - PhpSpec\Lumen\Extension\LumenExtension

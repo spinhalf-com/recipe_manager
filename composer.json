@@ -16,7 +16,7 @@
         "phpunit/phpunit": "~5.0",
         "mockery/mockery": "~0.9",
         "orangehill/iseed": "2.2",
-        "phpspec/phpspec": "^4.0"
+        "josborne/phpspec-lumen": "master-dev"
     },
     "autoload": {
         "psr-4": {
