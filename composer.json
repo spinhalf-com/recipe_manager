@@ -26,7 +26,8 @@
     "autoload-dev": {
         "classmap": [
             "tests/",
-            "database/"
+            "database/",
+            "spec"
         ]
     },
     "scripts": {
