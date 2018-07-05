@@ -137,10 +137,10 @@ class RecipeTest extends TestCase
     {
         $user = factory('App\User')->create();
 
-        $this->actingAs($user)
+        $res = $this->actingAs($user)
             ->json('POST', '/api/v1/rating', ['rating'=>5 ,'users_id'=>1, 'recipes_id'=>1])
             ->seeJson([
-                    "id"=>1,"rating"=>5,"recipes_id"=>1,"users_id"=>1
+                    "id"=>1,"rating"=>5,"recipes_id"=>1,"users_id"=>$user->id
                 ]
             );
     }
